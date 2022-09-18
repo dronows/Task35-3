@@ -5,7 +5,7 @@
 
 int main()
 {
-  std::filesystem::path pt("G:\\TestMap");
+  std::filesystem::path pt("TestMap");
 
   auto recursiveGetFileNamesByExtension = [](std::filesystem::path pt, const std::string extension) {
 	std::vector<std::filesystem::path> fileName;
