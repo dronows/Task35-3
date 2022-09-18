@@ -11,12 +11,11 @@ int main()
 	std::vector<std::filesystem::path> fileName;
 	if (std::filesystem::exists(pt) && std::filesystem::is_directory(pt)) {
 	  for (const auto& p : std::filesystem::recursive_directory_iterator(pt)) {
-		if (std::filesystem::is_regular_file(p)) {
-		  if (p.path().extension().compare(extension)) {
-			//std::filesystem::path temp( p.path().filename()) ;
-			fileName.push_back(p.path().filename());
-		  }
-		}
+	    if (std::filesystem::is_regular_file(p)) {
+	      if (p.path().extension().compare(extension)) {
+		fileName.push_back(p.path().filename());
+	      }
+	    }
 	  }
 	}
 	return std::make_unique<std::vector<std::filesystem::path>>(begin(fileName), end(fileName));
